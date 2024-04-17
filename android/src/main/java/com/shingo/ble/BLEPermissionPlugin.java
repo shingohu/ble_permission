@@ -90,7 +90,11 @@ public class BLEPermissionPlugin implements FlutterPlugin, MethodCallHandler, Ac
             filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
             filter.addAction(BLE_STATE_OFF);
             filter.addAction(BLE_STATE_ON);
-            context.registerReceiver(bluetoothStateReceiver, filter);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                context.registerReceiver(bluetoothStateReceiver, filter, Context.RECEIVER_EXPORTED);
+            } else {
+                context.registerReceiver(bluetoothStateReceiver, filter);
+            }
         }
 
     }
@@ -295,12 +299,12 @@ public class BLEPermissionPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onDetachedFromActivityForConfigChanges() {
-
+        onDetachedFromActivity();
     }
 
     @Override
     public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
-
+        onAttachedToActivity(binding);
     }
 
     @Override

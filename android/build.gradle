@@ -1,4 +1,4 @@
-group 'com.shingo.ble'
+group 'com.shingo.ble_permission'
 version '1.0'
 
 buildscript {
@@ -23,7 +23,7 @@ apply plugin: 'com.android.library'
 
 android {
     if (project.android.hasProperty("namespace")) {
-        namespace 'com.shingo.ble'
+        namespace 'com.shingo.ble_permission'
     }
 
     compileSdkVersion 33

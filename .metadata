@@ -4,8 +4,8 @@
 # This file should be version controlled and should not be manually edited.
 
 version:
-  revision: "2524052335ec76bb03e04ede244b071f1b86d190"
-  channel: "stable"
+  revision: "71f7e378c8ec6abb8dae7677e08aaa300a23104c"
+  channel: "[user-branch]"
 
 project_type: plugin
 
@@ -13,14 +13,17 @@ project_type: plugin
 migration:
   platforms:
     - platform: root
-      create_revision: 2524052335ec76bb03e04ede244b071f1b86d190
-      base_revision: 2524052335ec76bb03e04ede244b071f1b86d190
+      create_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
+      base_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
     - platform: android
-      create_revision: 2524052335ec76bb03e04ede244b071f1b86d190
-      base_revision: 2524052335ec76bb03e04ede244b071f1b86d190
+      create_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
+      base_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
     - platform: ios
-      create_revision: 2524052335ec76bb03e04ede244b071f1b86d190
-      base_revision: 2524052335ec76bb03e04ede244b071f1b86d190
+      create_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
+      base_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
+    - platform: ohos
+      create_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
+      base_revision: 71f7e378c8ec6abb8dae7677e08aaa300a23104c
 
   # User provided section
 

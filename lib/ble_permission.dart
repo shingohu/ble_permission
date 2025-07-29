@@ -42,7 +42,7 @@ class _BLEPermission {
     if (Platform.isAndroid) {
       return await _channel.invokeMethod("isLocationServiceEnable");
     }
-    return true;
+    throw UnsupportedError("isLocationServiceEnable is only supported on Android");
   }
 
   ///开启定位服务,android23-30版本蓝牙搜索的时候需要
@@ -51,13 +51,12 @@ class _BLEPermission {
     if (Platform.isAndroid) {
       return await _channel.invokeMethod("openLocationService");
     }
-    return true;
+    throw UnsupportedError("openLocationService is only supported on Android");
   }
 
   ///请求蓝牙相关权限(有则直接返回,没有则先请求)
   Future<bool> requestPermission() async {
-    bool hasPermission =
-        await _channel.invokeMethod<bool>("requestPermission") ?? false;
+    bool hasPermission = await _channel.invokeMethod<bool>("requestPermission") ?? false;
     return hasPermission;
   }
 
